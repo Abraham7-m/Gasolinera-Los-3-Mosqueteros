@@ -131,7 +131,7 @@
             // lblBomba1
             // 
             this.lblBomba1.AutoSize = true;
-            this.lblBomba1.Location = new System.Drawing.Point(989, 246);
+            this.lblBomba1.Location = new System.Drawing.Point(1029, 550);
             this.lblBomba1.Name = "lblBomba1";
             this.lblBomba1.Size = new System.Drawing.Size(44, 16);
             this.lblBomba1.TabIndex = 7;
@@ -140,7 +140,7 @@
             // lblBomba2
             // 
             this.lblBomba2.AutoSize = true;
-            this.lblBomba2.Location = new System.Drawing.Point(989, 302);
+            this.lblBomba2.Location = new System.Drawing.Point(1029, 468);
             this.lblBomba2.Name = "lblBomba2";
             this.lblBomba2.Size = new System.Drawing.Size(44, 16);
             this.lblBomba2.TabIndex = 8;
@@ -149,7 +149,7 @@
             // lblBomba3
             // 
             this.lblBomba3.AutoSize = true;
-            this.lblBomba3.Location = new System.Drawing.Point(989, 353);
+            this.lblBomba3.Location = new System.Drawing.Point(1029, 623);
             this.lblBomba3.Name = "lblBomba3";
             this.lblBomba3.Size = new System.Drawing.Size(44, 16);
             this.lblBomba3.TabIndex = 9;
@@ -158,7 +158,7 @@
             // lblBomba4
             // 
             this.lblBomba4.AutoSize = true;
-            this.lblBomba4.Location = new System.Drawing.Point(988, 446);
+            this.lblBomba4.Location = new System.Drawing.Point(1029, 707);
             this.lblBomba4.Name = "lblBomba4";
             this.lblBomba4.Size = new System.Drawing.Size(44, 16);
             this.lblBomba4.TabIndex = 10;
@@ -169,7 +169,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.BackgroundImage = global::GasolineraLos3Mosqueteros.Properties.Resources.fondo_final1;
+            this.BackgroundImage = global::GasolineraLos3Mosqueteros.Properties.Resources.Bienvenidos_a;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1182, 796);
             this.Controls.Add(this.lblBomba4);

@@ -52,10 +52,10 @@
     <Compile Include="Clases\Abastecimiento.cs" />
     <Compile Include="Clases\Bomba.cs" />
     <Compile Include="Clases\Controlador.cs" />
-    <Compile Include="Configuracion.cs">
+    <Compile Include="Diseño\Configuracion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Configuracion.Designer.cs">
+    <Compile Include="Diseño\Configuracion.Designer.cs">
       <DependentUpon>Configuracion.cs</DependentUpon>
     </Compile>
     <Compile Include="Diseño\Estadisticas.cs">
@@ -85,7 +85,7 @@
     <Compile Include="Clases\Precios.Gasolina.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Configuracion.resx">
+    <EmbeddedResource Include="Diseño\Configuracion.resx">
       <DependentUpon>Configuracion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Diseño\Estadisticas.resx">
@@ -168,6 +168,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\guardas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bienvenidos a.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

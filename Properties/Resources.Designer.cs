@@ -83,6 +83,16 @@ namespace GasolineraLos3Mosqueteros.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Bienvenidos_a {
+            get {
+                object obj = ResourceManager.GetObject("Bienvenidos a", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Bomba_1 {
             get {
                 object obj = ResourceManager.GetObject("Bomba 1", resourceCulture);

@@ -72,6 +72,7 @@ namespace GasolineraLos3Mosqueteros
         private void button7_Click_1(object sender, EventArgs e)
         {
             Configuracion form = new Configuracion(controlador);
+            ActualizarCombustible();
             form.ShowDialog();
         }
     }

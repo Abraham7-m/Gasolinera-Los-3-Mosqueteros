@@ -53,7 +53,6 @@ namespace GasolineraLos3Mosqueteros
                 //ocultar monto y boton detener
                 btnDetener.Visible = false;
                 txtMonto.Visible = true;
-
             }
         }
 
@@ -70,20 +69,20 @@ namespace GasolineraLos3Mosqueteros
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string nombre = txtNombre.Text;
-            string nit = txtNit.Text;
+            string nombre = txtNombre.Text.Trim();
+            string nit = txtNit.Text.Trim();
+
+            if (string.IsNullOrWhiteSpace(nombre))
+                nombre = "Cliente";
+
+            if (string.IsNullOrWhiteSpace(nit))
+                nit = "CF";
 
             monto = 0;
             litros = 0;
 
             string tipoGasolina = cmbGasolina.Text;
             precio = controlador.ObtenerPrecio(tipoGasolina);
-
-            if (nombre == "" || nit == "")
-            {
-                nombre = "Cliente";
-                nit = "CF";
-            }
 
             bool esPrepago = checkBox1.Checked;
             bool esTanque = checkBox2.Checked;
@@ -93,53 +92,52 @@ namespace GasolineraLos3Mosqueteros
                 MessageBox.Show("Seleccione un tipo de abastecimiento");
                 return;
             }
-                if (esPrepago)
+
+            if (esPrepago)
+            {
+                if (!double.TryParse(txtMonto.Text, out monto))
                 {
-                    if (!double.TryParse(txtMonto.Text, out monto))
-                    {
-                        MessageBox.Show("Monto inválido");
-                        return;
-                    }
+                    MessageBox.Show("Monto inválido");
+                    return;
+                }
 
-                    double disponible = controlador.combustible[numeroBomba - 1];
+                double disponible = controlador.combustible[numeroBomba - 1];
 
-                    litros = monto / precio;
+                litros = monto / precio;
 
-                    if (disponible <= 0)
-                    {
-                        MessageBox.Show("Esta bomba ya no tiene combustible.");
-                        return;
-                    }
+                if (disponible <= 0)
+                {
+                    MessageBox.Show("Esta bomba ya no tiene combustible.");
+                    return;
+                }
 
-                    if (litros > disponible)
-                    {
-                        litros = disponible;
-                        monto = litros * precio;
+                if (litros > disponible)
+                {
+                    litros = disponible;
+                    monto = litros * precio;
 
-                        MessageBox.Show("La bomba no tenía suficiente combustible.\nSolo se despacharon "
-                                        + litros.ToString("0.00") + " litros.\nTotal cobrado: Q"
-                                        + monto.ToString("0.00"));
-                    }
+                    MessageBox.Show("La bomba no tenía suficiente combustible.\nSolo se despacharon "
+                                    + litros.ToString("0.00") + " litros.\nTotal cobrado: Q"
+                                    + monto.ToString("0.00"));
+                }
 
-                    controlador.combustible[numeroBomba - 1] -= litros;
+                MessageBox.Show("Iniciando prepago");
 
-                    segundos = (int)litros;
+                controlador.combustible[numeroBomba - 1] -= litros;
+                controlador.GuardarCombustible();
 
-                    controlador.EnviarArduino(numeroBomba, segundos);
-              
+                segundos = (int)litros;
+
+                controlador.EnviarArduino(numeroBomba, segundos);
             }
-
             else if (esTanque)
             {
                 horaInicio = DateTime.Now;
                 tanqueActivo = true;
 
-                // tiempo largo para que quede encendida
-
                 MessageBox.Show("Tanque lleno iniciado. Presione detener para finalizar.");
                 controlador.EnviarArduino(numeroBomba, 999);
                 return;
-
             }
 
             Abastecimiento nuevo = new Abastecimiento();
@@ -147,7 +145,7 @@ namespace GasolineraLos3Mosqueteros
             nuevo.Cliente = nombre;
             nuevo.Nit = nit;
             nuevo.Bomba = numeroBomba;
-            nuevo.Tipo = esPrepago ? "Prepago" : "Tanque lleno";
+            nuevo.Tipo = "Prepago";
             nuevo.Litros = litros;
             nuevo.Total = monto;
             nuevo.Fecha = DateTime.Now;
@@ -157,12 +155,21 @@ namespace GasolineraLos3Mosqueteros
             controlador.registros.Add(nuevo);
             controlador.GuardarJson();
 
-
-            MessageBox.Show("Abastecimiento registrado correctamente " + segundos);
+            MessageBox.Show("Abastecimiento registrado correctamente");
+            this.Close();
         }
 
         private void btnDetener_Click(object sender, EventArgs e)
         {
+            string nombre = txtNombre.Text.Trim();
+            string nit = txtNit.Text.Trim();
+
+            if (string.IsNullOrWhiteSpace(nombre))
+                nombre = "Cliente";
+
+            if (string.IsNullOrWhiteSpace(nit))
+                nit = "CF";
+
             if (tanqueActivo == false)
             {
                 MessageBox.Show("No hay tanque lleno activo.");
@@ -170,8 +177,6 @@ namespace GasolineraLos3Mosqueteros
             }
 
             TimeSpan tiempo = DateTime.Now - horaInicio;
-
-            litros = tiempo.TotalSeconds;
 
             litros = tiempo.TotalSeconds;
 
@@ -196,13 +201,14 @@ namespace GasolineraLos3Mosqueteros
             monto = litros * precio;
 
             controlador.combustible[numeroBomba - 1] -= litros;
+            controlador.GuardarCombustible();
 
             controlador.EnviarArduino(numeroBomba, 0);
 
             Abastecimiento nuevo = new Abastecimiento();
 
-            nuevo.Cliente = txtNombre.Text;
-            nuevo.Nit = txtNit.Text;
+            nuevo.Cliente = nombre;
+            nuevo.Nit = nit;
             nuevo.Bomba = numeroBomba;
             nuevo.Tipo = "Tanque lleno";
             nuevo.Litros = litros;
@@ -220,6 +226,8 @@ namespace GasolineraLos3Mosqueteros
                             + monto.ToString("0.00"));
 
             tanqueActivo = false;
+
+            this.Close();
         }
 
         private void FormAbastecimiento_Load(object sender, EventArgs e)

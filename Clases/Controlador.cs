@@ -14,6 +14,7 @@ namespace GasolineraLos3Mosqueteros
 {
     public class Controlador
     {
+
         public List<Abastecimiento> registros = new List<Abastecimiento>();
 
         private string rutaArchivo = @"C:\temp\historial_abastecimientos.json";
@@ -24,7 +25,31 @@ namespace GasolineraLos3Mosqueteros
 
         //Puerto Serial (Conexion con arduino)
         public SerialPort puerto = new SerialPort("COM10", 9600);
+        
+        public Controlador()
+        {
+            CargarCombustible();
+            CargarJson();
+        }
+        public void GuardarCombustible()
+        {
+            string json = JsonConvert.SerializeObject(combustible, Formatting.Indented);
+            File.WriteAllText("combustible.json", json);
+        }
 
+        public void CargarCombustible()
+        {
+            if (File.Exists("combustible.json"))
+            {
+                string json = File.ReadAllText("combustible.json");
+                combustible = JsonConvert.DeserializeObject<double[]>(json);
+            }
+            else
+            {
+                combustible = new double[] { 50, 50, 50, 50 };
+                GuardarCombustible();
+            }
+        }
 
         public double ObtenerPrecio(string tipo)
         {

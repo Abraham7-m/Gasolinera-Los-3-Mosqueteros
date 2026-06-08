@@ -70,7 +70,7 @@
             this.cmbGasolina.FormattingEnabled = true;
             this.cmbGasolina.Items.AddRange(new object[] {
             "Regular",
-            "Superior",
+            "Diesel",
             "Súper",
             "Premium"});
             this.cmbGasolina.Location = new System.Drawing.Point(187, 195);
