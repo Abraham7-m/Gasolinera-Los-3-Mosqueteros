@@ -13,11 +13,11 @@ namespace GasolineraLos3Mosqueteros
 {
     public partial class FormAbastecimiento : Form
     {
+        //Variable globales
+
         private int numeroBomba;
 
         private Controlador controlador;
-
-        Timer timer = new Timer();
 
         double litros = 0;
         double monto = 0;
@@ -82,6 +82,7 @@ namespace GasolineraLos3Mosqueteros
             litros = 0;
 
             string tipoGasolina = cmbGasolina.Text;
+
             precio = controlador.ObtenerPrecio(tipoGasolina);
 
             bool esPrepago = checkBox1.Checked;
@@ -130,6 +131,7 @@ namespace GasolineraLos3Mosqueteros
 
                 controlador.EnviarArduino(numeroBomba, segundos);
             }
+
             else if (esTanque)
             {
                 horaInicio = DateTime.Now;

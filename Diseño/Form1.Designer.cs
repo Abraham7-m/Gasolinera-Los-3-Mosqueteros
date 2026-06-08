@@ -131,7 +131,7 @@
             // lblBomba1
             // 
             this.lblBomba1.AutoSize = true;
-            this.lblBomba1.Location = new System.Drawing.Point(1029, 550);
+            this.lblBomba1.Location = new System.Drawing.Point(1029, 464);
             this.lblBomba1.Name = "lblBomba1";
             this.lblBomba1.Size = new System.Drawing.Size(44, 16);
             this.lblBomba1.TabIndex = 7;
@@ -140,7 +140,7 @@
             // lblBomba2
             // 
             this.lblBomba2.AutoSize = true;
-            this.lblBomba2.Location = new System.Drawing.Point(1029, 468);
+            this.lblBomba2.Location = new System.Drawing.Point(1029, 547);
             this.lblBomba2.Name = "lblBomba2";
             this.lblBomba2.Size = new System.Drawing.Size(44, 16);
             this.lblBomba2.TabIndex = 8;

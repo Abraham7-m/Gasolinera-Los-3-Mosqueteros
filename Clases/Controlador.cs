@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Newtonsoft.Json;
+using Newtonsoft.Json;  //libreria Json
 using System.IO.Ports;
 using System.Windows.Forms;
 
@@ -26,6 +26,7 @@ namespace GasolineraLos3Mosqueteros
         //Puerto Serial (Conexion con arduino)
         public SerialPort puerto = new SerialPort("COM10", 9600);
         
+        //Constructor
         public Controlador()
         {
             CargarCombustible();
