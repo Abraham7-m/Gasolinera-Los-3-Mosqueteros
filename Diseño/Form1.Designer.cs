@@ -34,6 +34,11 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.lblBomba1 = new System.Windows.Forms.Label();
+            this.lblBomba2 = new System.Windows.Forms.Label();
+            this.lblBomba3 = new System.Windows.Forms.Label();
+            this.lblBomba4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -86,32 +91,92 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(259, 706);
+            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button5.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.button5.BackgroundImage = global::GasolineraLos3Mosqueteros.Properties.Resources.historial;
+            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button5.Location = new System.Drawing.Point(232, 663);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(203, 62);
+            this.button5.Size = new System.Drawing.Size(240, 70);
             this.button5.TabIndex = 4;
-            this.button5.Text = "button5";
             this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.button5.Click += new System.EventHandler(this.button5_Click_1);
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(544, 705);
+            this.button6.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.button6.BackgroundImage = global::GasolineraLos3Mosqueteros.Properties.Resources.estadisticas;
+            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button6.Location = new System.Drawing.Point(495, 663);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(224, 50);
+            this.button6.Size = new System.Drawing.Size(240, 70);
             this.button6.TabIndex = 5;
-            this.button6.Text = "button6";
             this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.button6.Click += new System.EventHandler(this.button6_Click_1);
+            // 
+            // button7
+            // 
+            this.button7.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.button7.BackgroundImage = global::GasolineraLos3Mosqueteros.Properties.Resources.Configuracion;
+            this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button7.Location = new System.Drawing.Point(778, 658);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(75, 75);
+            this.button7.TabIndex = 6;
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click_1);
+            // 
+            // lblBomba1
+            // 
+            this.lblBomba1.AutoSize = true;
+            this.lblBomba1.Location = new System.Drawing.Point(989, 246);
+            this.lblBomba1.Name = "lblBomba1";
+            this.lblBomba1.Size = new System.Drawing.Size(44, 16);
+            this.lblBomba1.TabIndex = 7;
+            this.lblBomba1.Text = "label1";
+            // 
+            // lblBomba2
+            // 
+            this.lblBomba2.AutoSize = true;
+            this.lblBomba2.Location = new System.Drawing.Point(989, 302);
+            this.lblBomba2.Name = "lblBomba2";
+            this.lblBomba2.Size = new System.Drawing.Size(44, 16);
+            this.lblBomba2.TabIndex = 8;
+            this.lblBomba2.Text = "label1";
+            // 
+            // lblBomba3
+            // 
+            this.lblBomba3.AutoSize = true;
+            this.lblBomba3.Location = new System.Drawing.Point(989, 353);
+            this.lblBomba3.Name = "lblBomba3";
+            this.lblBomba3.Size = new System.Drawing.Size(44, 16);
+            this.lblBomba3.TabIndex = 9;
+            this.lblBomba3.Text = "label1";
+            // 
+            // lblBomba4
+            // 
+            this.lblBomba4.AutoSize = true;
+            this.lblBomba4.Location = new System.Drawing.Point(988, 446);
+            this.lblBomba4.Name = "lblBomba4";
+            this.lblBomba4.Size = new System.Drawing.Size(44, 16);
+            this.lblBomba4.TabIndex = 10;
+            this.lblBomba4.Text = "label1";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.BackgroundImage = global::GasolineraLos3Mosqueteros.Properties.Resources.fondo_final;
+            this.BackgroundImage = global::GasolineraLos3Mosqueteros.Properties.Resources.fondo_final1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1182, 796);
+            this.Controls.Add(this.lblBomba4);
+            this.Controls.Add(this.lblBomba3);
+            this.Controls.Add(this.lblBomba2);
+            this.Controls.Add(this.lblBomba1);
+            this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
@@ -122,6 +187,7 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -133,6 +199,11 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Label lblBomba1;
+        private System.Windows.Forms.Label lblBomba2;
+        private System.Windows.Forms.Label lblBomba3;
+        private System.Windows.Forms.Label lblBomba4;
     }
 }
 

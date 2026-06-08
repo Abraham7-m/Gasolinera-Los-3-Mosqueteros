@@ -49,46 +49,55 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Abastecimiento.cs" />
-    <Compile Include="Bomba.cs" />
-    <Compile Include="Controlador.cs" />
-    <Compile Include="Estadisticas.cs">
+    <Compile Include="Clases\Abastecimiento.cs" />
+    <Compile Include="Clases\Bomba.cs" />
+    <Compile Include="Clases\Controlador.cs" />
+    <Compile Include="Configuracion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Estadisticas.Designer.cs">
+    <Compile Include="Configuracion.Designer.cs">
+      <DependentUpon>Configuracion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Diseño\Estadisticas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Diseño\Estadisticas.Designer.cs">
       <DependentUpon>Estadisticas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="Diseño\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
+    <Compile Include="Diseño\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormAbastecimiento.cs">
+    <Compile Include="Diseño\FormAbastecimiento.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormAbastecimiento.Designer.cs">
+    <Compile Include="Diseño\FormAbastecimiento.Designer.cs">
       <DependentUpon>FormAbastecimiento.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormHistorial.cs">
+    <Compile Include="Diseño\FormHistorial.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormHistorial.Designer.cs">
+    <Compile Include="Diseño\FormHistorial.Designer.cs">
       <DependentUpon>FormHistorial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Precios.Gasolina.cs" />
+    <Compile Include="Clases\Precios.Gasolina.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Estadisticas.resx">
+    <EmbeddedResource Include="Configuracion.resx">
+      <DependentUpon>Configuracion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Diseño\Estadisticas.resx">
       <DependentUpon>Estadisticas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
+    <EmbeddedResource Include="Diseño\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormAbastecimiento.resx">
+    <EmbeddedResource Include="Diseño\FormAbastecimiento.resx">
       <DependentUpon>FormAbastecimiento.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormHistorial.resx">
+    <EmbeddedResource Include="Diseño\FormHistorial.resx">
       <DependentUpon>FormHistorial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -129,6 +138,36 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\bomba 4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\historial.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\estadisticas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Configuracion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondo_final1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\abaste.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\abaste1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\estadi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\estadisticaaaa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\confi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\guardas.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

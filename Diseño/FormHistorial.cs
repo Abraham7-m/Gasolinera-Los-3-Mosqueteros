@@ -27,6 +27,14 @@ namespace GasolineraLos3Mosqueteros
             dgvRegistros.Columns["Litros"].DefaultCellStyle.Format = "N2";
             dgvRegistros.Columns["Total"].DefaultCellStyle.Format = "N2";
             dgvRegistros.Columns["PrecioLitro"].DefaultCellStyle.Format = "N2";
+
+            dgvRegistros.Dock = DockStyle.Fill;
+            dgvRegistros.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+        }
+
+        private void dgvRegistros_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

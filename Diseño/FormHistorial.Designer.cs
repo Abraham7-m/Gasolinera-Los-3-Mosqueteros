@@ -35,18 +35,19 @@
             // dgvRegistros
             // 
             this.dgvRegistros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvRegistros.Location = new System.Drawing.Point(35, 83);
+            this.dgvRegistros.Location = new System.Drawing.Point(12, 91);
             this.dgvRegistros.Name = "dgvRegistros";
             this.dgvRegistros.RowHeadersWidth = 51;
             this.dgvRegistros.RowTemplate.Height = 24;
-            this.dgvRegistros.Size = new System.Drawing.Size(719, 270);
+            this.dgvRegistros.Size = new System.Drawing.Size(1191, 532);
             this.dgvRegistros.TabIndex = 0;
+            this.dgvRegistros.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRegistros_CellContentClick);
             // 
             // FormHistorial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1219, 635);
             this.Controls.Add(this.dgvRegistros);
             this.Name = "FormHistorial";
             this.Text = "FormHistorial";

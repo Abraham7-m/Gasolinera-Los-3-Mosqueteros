@@ -69,17 +69,18 @@ namespace GasolineraLos3Mosqueteros
                 totalDinero += controlador.registros[i].Total;
             }
 
-            label4.Text = "Total de abastecimientos: " + controlador.registros.Count;
+            label4.Text = "" + controlador.registros.Count;
 
-            label5.Text =
-                "Dinero total: Q" +
-                totalDinero.ToString("0.00");
+            label5.Text = "Q. " + totalDinero.ToString("0.00");
 
-            label2.Text =
-                "Bomba más usada: Bomba " + (mayor + 1);
+            label2.Text = "Bomba" + (mayor + 1);
 
-            label3.Text =
-                "Bomba menos usada: Bomba " + (menor + 1);
+            label3.Text = "Bomba" + (menor + 1);
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

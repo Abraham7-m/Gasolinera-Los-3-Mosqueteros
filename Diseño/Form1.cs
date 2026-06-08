@@ -19,9 +19,17 @@ namespace GasolineraLos3Mosqueteros
             controlador.CargarJson();
         }
 
+        private void ActualizarCombustible()
+        {
+            lblBomba1.Text = controlador.combustible[0].ToString("0.00") + " L";
+            lblBomba2.Text = controlador.combustible[1].ToString("0.00") + " L";
+            lblBomba3.Text = controlador.combustible[2].ToString("0.00") + " L";
+            lblBomba4.Text = controlador.combustible[3].ToString("0.00") + " L";
+        }
+
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            ActualizarCombustible();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -48,16 +56,23 @@ namespace GasolineraLos3Mosqueteros
             form.Show();
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void button6_Click_1(object sender, EventArgs e)
+        {
+
+            Estadisticas form = new Estadisticas(controlador);
+            form.Show();
+        }
+
+        private void button5_Click_1(object sender, EventArgs e)
         {
             FormHistorial form = new FormHistorial(controlador);
             form.Show();
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void button7_Click_1(object sender, EventArgs e)
         {
-            Estadisticas form = new Estadisticas(controlador);
-            form.Show();
+            Configuracion form = new Configuracion(controlador);
+            form.ShowDialog();
         }
     }
 }
